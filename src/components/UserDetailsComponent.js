@@ -1,30 +1,43 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-
-const UserDetailsComponent = () => {
-  const [user, setUser] = useState({});
-  const { id } = useParams();
-
-  useEffect(() => {
-    const dataFetch = async () => {
-      const data = await (
-        await fetch(
-            `https://api.github.com/users/${id}`
-        )
-      ).json();
-
-      setUser(data);
-    };
-
-    dataFetch();
-  }, []);
-
+import React from "react";
+const UserDetailsComponent = (p) => {
+  const { user } = p;
   return (
-    <div>
-      <h1>User Details</h1>
-      <p>{JSON.stringify(user)}</p>
+    <div className="container pt-3">
+      <div className="row align-items-center">
+        <div className="col col-lg-2">
+          <img
+            src={user.avatar_url}
+            alt="avatar"
+            className="rounded-circle img-thumbnail"
+          />
+        </div>
+        <div className="col">
+          <h1>{user.name}</h1>
+          <p>{user.bio}</p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> {user.location}
+          </p>
+          <p>
+            Twitter:
+            <a
+              href={`https://twitter.com/${user.twitter_username}`}
+              class="text-dark text-decoration-none"
+            >
+              {" "}
+              {`https://twitter.com/${user.twitter_username}`}
+            </a>
+          </p>
+        </div>
+
+        <p>
+          <i class="fab fa-github"></i>
+          <a href={user.github_url} class="text-dark text-decoration-none">
+            {" "}
+            {user.github_url}
+          </a>
+        </p>
+      </div>
     </div>
   );
 };
-
 export default UserDetailsComponent;
