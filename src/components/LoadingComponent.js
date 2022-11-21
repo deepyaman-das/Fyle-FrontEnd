@@ -21,7 +21,12 @@ const LaodingComponent = () => {
   const dataFetch = async () => {
       const data = await (
         await fetch(
-            `https://api.github.com/users/${id}`
+            `https://api.github.com/users/${id}`,{
+              method: "GET",
+            headers: {
+              authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`
+            }
+          }
         )
       ).json();
 
