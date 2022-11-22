@@ -24,7 +24,6 @@ const HomeComponent = () => {
           <button >Search</button>
         </Link>
         </center>
-        
     </div>
   );
 };

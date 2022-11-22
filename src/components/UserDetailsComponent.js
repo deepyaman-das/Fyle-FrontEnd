@@ -41,7 +41,7 @@ const UserDetailsComponent = (p) => {
           </p>
         </div>
       </div>
-      <PaginationComponent id={user.login} totalrepo={user.totalrepo}/>
+      <PaginationComponent id={user.login} totalRepo={user.public_repos}/>
     </div>
 
   );

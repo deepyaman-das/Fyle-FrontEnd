@@ -22,8 +22,12 @@ const RepoComponent = (p) => {
     return (
         <div>
             {load ? (
-                repo && repo.map((repo) => (
-                    <CardComponent repo={repo} key={repo.id} />))
+                <div className="row">
+                {repo && repo.map((repo) => (
+                    
+                    <CardComponent repo={repo} key={repo.id} />
+                    ))}
+                </div>
 
                 ) : (
                     <div>

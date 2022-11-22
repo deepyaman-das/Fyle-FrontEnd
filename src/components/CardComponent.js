@@ -17,11 +17,10 @@ const CardComponent = (p) => {
     langFetch(repo.languages_url);
   }, []);
   return (
-    <div className="row">
-    <div className="col-6">
+    <div className="col-md-6">
       <div className="card" key={repo.id}>
         <div className="card-body">
-          <h5 className="card-title">{repo.name}</h5>
+          <h5 className="card-title" ><a href={repo.html_url} className="text-dark text-decoration-none">{repo.name}</a></h5>
           <h6 className="card-subtitle mb-2 text-muted">{repo.description?repo.description:"No Description"}</h6>
           <p className="card-text">
             <p>
@@ -39,7 +38,6 @@ const CardComponent = (p) => {
           </p>
         </div>
       </div>
-    </div>
     </div>
   );
 };

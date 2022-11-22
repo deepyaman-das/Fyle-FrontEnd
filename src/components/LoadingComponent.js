@@ -16,7 +16,8 @@ const LaodingComponent = () => {
     location: "",
     twitter_username: "",
     github_url: "",
-    load: false
+    load: false,
+    public_repos: 0,
   });  
   const dataFetch = async () => {
       const data = await (
@@ -38,7 +39,8 @@ const LaodingComponent = () => {
         location: data.location,
         twitter_username: data.twitter_username,
         github_url: data.html_url,
-        load: true
+        load: true,
+        public_repos: data.public_repos
       });
     };
   return (
