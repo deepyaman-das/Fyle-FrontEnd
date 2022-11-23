@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BarLoader } from "react-spinners";
 const CardComponent = (p) => {
   const { repo } = p;
   const [lang, setLang] = useState([]);
@@ -18,20 +19,20 @@ const CardComponent = (p) => {
   }, []);
   return (
     <div className="col-md-6">
-      <div className="card" key={repo.id}>
+      <div className="card border-dark h-100" key={repo.id}>
         <div className="card-body">
-          <h5 className="card-title" ><a href={repo.html_url} className="text-dark text-decoration-none">{repo.name}</a></h5>
-          <h6 className="card-subtitle mb-2 text-muted">{repo.description?repo.description:"No Description"}</h6>
-          <p className="card-text">
+          <h5 className="card-title"><a href={repo.html_url} className="text-dark text-decoration-none">{repo.name}</a></h5>
+          <h6 className="card-subtitle mb-3 text-muted pt-4">{repo.description?repo.description:"No Description"}</h6>
+          <p className="card-text pt-3">
             <p>
                 {load ? (
                     <>
                     {lang.map((language)=>(
-                        <div class="d-inline bg-primary text-white rounded" key={language}>{language}</div>
+                        <div class="d-inline p-1 m-1 text-bg-primary rounded-1" key={language}>{language}</div>
                     ))}
                     </>
                 ) : (
-                    <span className="d-inline bg-primary text-white rounded">Loading...</span>
+                    <BarLoader color="#0d6efd" />
                 )}
 
             </p>

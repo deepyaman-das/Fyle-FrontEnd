@@ -20,13 +20,18 @@ const UserDetailsComponent = (p) => {
           </p>
           <p>
             Twitter:
-            <a
+            {user.twitter_username ? (
+              <a
               href={`https://twitter.com/${user.twitter_username}`}
               className="text-dark text-decoration-none"
             >
               {" "}
               {`https://twitter.com/${user.twitter_username}`}
             </a>
+            ) : (
+              " No Twitter"
+            )}
+            
           </p>
         </div>
       </div>
