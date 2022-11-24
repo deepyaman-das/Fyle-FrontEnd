@@ -22,16 +22,16 @@ const UserDetailsComponent = (p) => {
             Twitter:
             {user.twitter_username ? (
               <a
-              href={`https://twitter.com/${user.twitter_username}`}
-              className="text-dark text-decoration-none"
-            >
-              {" "}
-              {`https://twitter.com/${user.twitter_username}`}
-            </a>
+                href={`https://twitter.com/${user.twitter_username}`}
+                className="text-dark text-decoration-none"
+                target="_blank"
+              >
+                {" "}
+                {`https://twitter.com/${user.twitter_username}`}
+              </a>
             ) : (
               " No Twitter"
             )}
-            
           </p>
         </div>
       </div>
@@ -39,16 +39,19 @@ const UserDetailsComponent = (p) => {
         <div className="col col-lg-3">
           <p className="pt-3">
             <i className="fab fa-github"></i>
-            <a href={user.github_url} className="text-dark text-decoration-none">
+            <a
+              href={user.github_url}
+              className="text-dark text-decoration-none"
+              target="_blank"
+            >
               {" "}
               {user.github_url}
             </a>
           </p>
         </div>
       </div>
-      <PaginationComponent id={user.login} totalRepo={user.public_repos}/>
+      <PaginationComponent id={user.login} totalRepo={user.public_repos} />
     </div>
-
   );
 };
 export default UserDetailsComponent;

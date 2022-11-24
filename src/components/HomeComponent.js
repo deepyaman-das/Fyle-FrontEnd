@@ -14,24 +14,26 @@ const HomeComponent = () => {
   };
   return (
     <div className="position-absolute top-50 start-50 translate-middle">
-        <p className="text-primary h3 mb-4">
-          <b>Enter the Github username</b>
-        </p>
+      <p className="text-primary h3 mb-4">
+        <b>Enter the Github username</b>
+      </p>
       <div class="card rounded-5">
         <div class="card-body">
           <div className="input-group">
-        <input
-          type="text"
-          className="form-control border-0 shadow-none"
-          placeholder="Enter Github Username"
-          onChange={(e) => handleNameChange(e)}
-          onKeyDown={(e) => handleSubmit(e)}
-        />
-        <Link to={`${userName}`}>
-          <button className="btn btn-primary rounded-5"><i class="fas fa-search"></i></button>
-        </Link>
+            <input
+              type="text"
+              className="form-control border-0 shadow-none"
+              placeholder="Enter Github Username"
+              onChange={(e) => handleNameChange(e)}
+              onKeyDown={(e) => handleSubmit(e)}
+            />
+            <Link to={`${userName}`}>
+              <button className="btn btn-primary rounded-5">
+                <i class="fas fa-search"></i>
+              </button>
+            </Link>
           </div>
-      </div>
+        </div>
       </div>
     </div>
   );

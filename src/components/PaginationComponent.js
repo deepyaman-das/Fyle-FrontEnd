@@ -63,7 +63,11 @@ const PaginationComponent = (p) => {
               </li>
             ))}
             <li className="page-item">
-              <button className="page-link shadow-none" id="last" onClick={handlePage}>
+              <button
+                className="page-link shadow-none"
+                id="last"
+                onClick={handlePage}
+              >
                 &raquo;
               </button>
             </li>
