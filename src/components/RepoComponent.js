@@ -24,7 +24,7 @@ const RepoComponent = (p) => {
     dataFetch();
   }, [page]);
   return (
-    <div>
+    <>
       {load ? (
         <div className="row gy-4 gx-5">
           {repo &&
@@ -37,7 +37,7 @@ const RepoComponent = (p) => {
           </center>
         </div>
       )}
-    </div>
+    </>
   );
 };
 export default RepoComponent;

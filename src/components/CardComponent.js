@@ -27,7 +27,7 @@ const CardComponent = (p) => {
             <a
               href={repo.html_url}
               className="text-dark text-decoration-none"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               {repo.name}
             </a>
@@ -36,12 +36,12 @@ const CardComponent = (p) => {
             {repo.description ? repo.description : "No Description"}
           </h6>
           <p className="card-text pt-3">
-            <p>
+            <p className="lh-lg">
               {load ? (
                 <>
                   {lang.map((language) => (
                     <div
-                      class="d-inline p-1 m-1 text-bg-primary rounded-1"
+                      class="d-inline p-1 m-1 text-bg-primary rounded-1 me-2"
                       key={language}
                     >
                       {language}

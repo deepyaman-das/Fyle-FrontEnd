@@ -12,7 +12,9 @@ const PaginationComponent = (p) => {
   }, [totalRepo]);
   let pageArray = [];
   for (let i = 1; i <= totalPage; i++) {
-    pageArray.push(i);
+    if (i >= page - 5 && i <= page + 5 && i <= totalPage && i >= 1 && pageArray.length < 10) {
+      pageArray.push(i);
+    }
   }
   const activePage = (pp) => {
     if (pp === page) {
